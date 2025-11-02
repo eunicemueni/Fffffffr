@@ -5,32 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kairah Studio</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); opacity: 0.2; }
-      50% { transform: scale(1.1); opacity: 0.25; }
-    }
-    .animate-pulse {
-      animation: pulse 6s infinite alternate;
-    }
-    .bg-gradient-radial {
-      background: radial-gradient(circle at center, var(--tw-gradient-stops));
-    }
-    .particle {
-      position: absolute;
-      border-radius: 50%;
-      opacity: 0.5;
-      pointer-events: none;
-      animation: float 10s linear infinite;
-    }
-    @keyframes float {
-      0% { transform: translateY(0) translateX(0) scale(1); opacity: 0.5; }
-      50% { transform: translateY(-50px) translateX(30px) scale(1.2); opacity: 0.7; }
-      100% { transform: translateY(0) translateX(0) scale(1); opacity: 0.5; }
-    }
-  </style>
 </head>
-<body class="bg-[#1a1424] font-poppins text-white overflow-x-hidden relative">
+<body class="bg-[#1a1424] font-poppins text-white overflow-x-hidden">
 
   <!-- Header -->
   <header class="w-full bg-gradient-to-br from-[#3D2C41] to-[#1a1424] py-20 text-center relative overflow-hidden">
@@ -48,49 +24,39 @@
     <!-- Background radial glow -->
     <div class="absolute inset-0 bg-gradient-radial from-[#0FB9B1]/20 to-transparent opacity-70 pointer-events-none"></div>
 
-    <!-- Floating particles -->
-    <div id="particles-container" class="absolute inset-0 z-0"></div>
-
-    <p class="text-2xl md:text-3xl font-semibold mt-6 text-[#0FB9B1] drop-shadow-lg relative z-10">
+    <p class="text-2xl md:text-3xl font-semibold mt-6 text-[#0FB9B1] drop-shadow-lg">
       Divine Cinematics by AI — Create videos beyond imagination
     </p>
 
-    <p class="text-xl md:text-2xl font-medium mt-6 max-w-3xl drop-shadow-sm relative z-10">
+    <p class="text-xl md:text-2xl font-medium mt-6 max-w-3xl drop-shadow-sm">
       Bring your ideas to life with cinematic quality and AI-powered precision.
     </p>
 
-    <p class="text-lg md:text-xl mt-6 max-w-3xl drop-shadow-sm relative z-10">
+    <p class="text-lg md:text-xl mt-6 max-w-3xl drop-shadow-sm">
       From short teasers to full-length masterpieces, Kairah Studio transforms your vision into reality.
     </p>
 
-    <p class="text-lg md:text-xl mt-6 max-w-3xl font-semibold drop-shadow-sm relative z-10">
+    <p class="text-lg md:text-xl mt-6 max-w-3xl font-semibold drop-shadow-sm">
       Experience the future of storytelling — where your creativity knows no limits.
     </p>
 
-    <p class="mt-6 text-sm md:text-base text-gray-300 drop-shadow-sm relative z-10">
+    <p class="mt-6 text-sm md:text-base text-gray-300 drop-shadow-sm">
       Your imagination, powered by AI
     </p>
   </section>
 
-  <!-- Particle Script -->
-  <script>
-    const container = document.getElementById('particles-container');
-    const colors = ['#D4AF37', '#0FB9B1', '#FFFFFF'];
-
-    for (let i = 0; i < 25; i++) {
-      const particle = document.createElement('div');
-      const size = Math.random() * 8 + 4;
-      particle.classList.add('particle');
-      particle.style.width = size + 'px';
-      particle.style.height = size + 'px';
-      particle.style.background = colors[Math.floor(Math.random() * colors.length)];
-      particle.style.top = Math.random() * 100 + '%';
-      particle.style.left = Math.random() * 100 + '%';
-      particle.style.animationDuration = (5 + Math.random() * 10) + 's';
-      particle.style.animationDelay = Math.random() * 5 + 's';
-      container.appendChild(particle);
+  <!-- Optional Tailwind animation for pulsing glow -->
+  <style>
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 0.2; }
+      50% { transform: scale(1.1); opacity: 0.25; }
     }
-  </script>
-
+    .animate-pulse {
+      animation: pulse 6s infinite alternate;
+    }
+    .bg-gradient-radial {
+      background: radial-gradient(circle at center, var(--tw-gradient-stops));
+    }
+  </style>
 </body>
 </html>
